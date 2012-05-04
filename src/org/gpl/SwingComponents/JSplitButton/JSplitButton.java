@@ -1,23 +1,3 @@
-
-/*
- *  Copyright (C) 2011 Naveed Quadri
- *  naveedmurtuza@gmail.com
- *  www.naveedmurtuza.blogspot.com
- *
- *  This program is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public License
- *  as published by the Free Software Foundation; either version 2
- *  of the License, or (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser General Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- */
 package org.gpl.SwingComponents.JSplitButton;
 
 import java.awt.*;
@@ -25,7 +5,9 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import javax.swing.*;
+import javax.swing.event.EventListenerList;
 import org.gpl.SwingComponents.JSplitButton.Events.SplitButtonActionListener;
+
 
 /**
  * An implementation of a "split" button.The left side acts like a normal button, right side has a jPopupMenu attached. <br />
@@ -41,6 +23,7 @@ import org.gpl.SwingComponents.JSplitButton.Events.SplitButtonActionListener;
  * The 'button part' of the splitbutton is being drawn without the border??? and this is only happening in CDE/Motif and Metal Look and Feels.
  * GTK+ and nimbus works perfect. No Idea why? if anybody could point out the mistake that'd be nice.My email naveedmurtuza[at]gmail.com<br /><br />
  * P.S. The fireXXX methods has been directly plagarized from JDK source code, and yes even the javadocs..;)<br /><br />
+ * The border bug in metal L&F is now fixed. Thanks to Hervé Guillaume.
  * @author Naveed Quadri
  */
 public class JSplitButton extends JButton implements MouseMotionListener, MouseListener, ActionListener,Serializable {
@@ -258,22 +241,27 @@ public class JSplitButton extends JButton implements MouseMotionListener, MouseL
         this.image = image;
     }
 
+    /**
+     * 
+     * @param g 
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Color oldColor = g.getColor();
+  Graphics gClone = g.create();//EDIT: Hervé Guillaume
+        Color oldColor = gClone.getColor();
         splitRectangle = new Rectangle(getWidth() - splitWidth, 0, splitWidth, getHeight());
-        g.translate(splitRectangle.x, splitRectangle.y);
+        gClone.translate(splitRectangle.x, splitRectangle.y);
         int mh = getHeight() / 2;
         int mw = splitWidth / 2;
-        g.drawImage(getImage(), mw - arrowSize / 2, mh + 2 - arrowSize / 2, null);
+        gClone.drawImage(getImage(), mw - arrowSize / 2, mh + 2 - arrowSize / 2, null);
         if (onSplit && !alwaysDropDown && popupMenu != null) {
-            g.setColor(UIManager.getLookAndFeelDefaults().getColor("Button.background"));
-            g.drawLine(1, separatorSpacing + 2, 1, getHeight() - separatorSpacing - 2);
-            g.setColor(UIManager.getLookAndFeelDefaults().getColor("Button.shadow"));
-            g.drawLine(2, separatorSpacing + 2, 2, getHeight() - separatorSpacing - 2);
+            gClone.setColor(UIManager.getLookAndFeelDefaults().getColor("Button.background"));
+            gClone.drawLine(1, separatorSpacing + 2, 1, getHeight() - separatorSpacing - 2);
+            gClone.setColor(UIManager.getLookAndFeelDefaults().getColor("Button.shadow"));
+            gClone.drawLine(2, separatorSpacing + 2, 2, getHeight() - separatorSpacing - 2);
         }
-        g.setColor(oldColor);
+        gClone.setColor(oldColor);
     }
 
     /**
