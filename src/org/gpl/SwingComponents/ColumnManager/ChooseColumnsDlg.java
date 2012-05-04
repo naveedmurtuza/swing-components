@@ -92,17 +92,16 @@ public class ChooseColumnsDlg extends javax.swing.JDialog implements ListSelecti
         checkBoxList1 = new org.gpl.SwingComponents.JCheckboxList.JCheckBoxList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(ChooseColumnsDlg.class);
-        setTitle(resourceMap.getString("Form.title")); // NOI18N
+        setTitle("Choose Details"); // NOI18N
         setName("Form"); // NOI18N
 
-        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
+        jLabel1.setText("Select the details you want to display."); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
 
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setText("Details:"); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
-        moveUpBtn.setText(resourceMap.getString("moveUpBtn.text")); // NOI18N
+        moveUpBtn.setText("Move Up"); // NOI18N
         moveUpBtn.setName("moveUpBtn"); // NOI18N
         moveUpBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +109,7 @@ public class ChooseColumnsDlg extends javax.swing.JDialog implements ListSelecti
             }
         });
 
-        moveDownBtn.setText(resourceMap.getString("moveDownBtn.text")); // NOI18N
+        moveDownBtn.setText("Move Down"); // NOI18N
         moveDownBtn.setName("moveDownBtn"); // NOI18N
         moveDownBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +117,7 @@ public class ChooseColumnsDlg extends javax.swing.JDialog implements ListSelecti
             }
         });
 
-        cancelBtn.setText(resourceMap.getString("cancelBtn.text")); // NOI18N
+        cancelBtn.setText("Cancel"); // NOI18N
         cancelBtn.setName("cancelBtn"); // NOI18N
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +125,7 @@ public class ChooseColumnsDlg extends javax.swing.JDialog implements ListSelecti
             }
         });
 
-        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
+        jLabel3.setText("Width of selected column(pixels):"); // NOI18N
         jLabel3.setName("jLabel3"); // NOI18N
 
         jSpinner1.setName("jSpinner1"); // NOI18N
@@ -138,7 +137,7 @@ public class ChooseColumnsDlg extends javax.swing.JDialog implements ListSelecti
 
         jSeparator1.setName("jSeparator1"); // NOI18N
 
-        okBtn.setText(resourceMap.getString("okBtn.text")); // NOI18N
+        okBtn.setText("OK"); // NOI18N
         okBtn.setName("okBtn"); // NOI18N
         okBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
