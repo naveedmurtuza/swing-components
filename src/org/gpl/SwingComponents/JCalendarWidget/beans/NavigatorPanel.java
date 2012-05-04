@@ -421,7 +421,7 @@ public class NavigatorPanel extends JPanel implements PropertyChangeListener {
         setOpaque(false);
         setLayout(new java.awt.BorderLayout());
 
-        previousBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/gpl/components/JCalendarWidget/resources/navigate_left.png"))); // NOI18N
+        previousBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/gpl/SwingComponents/JCalendarWidget/resources/navigate-left16.png"))); // NOI18N
         previousBtn.setBorderPainted(false);
         previousBtn.setContentAreaFilled(false);
         previousBtn.setFocusPainted(false);
@@ -453,7 +453,7 @@ public class NavigatorPanel extends JPanel implements PropertyChangeListener {
         });
         add(dateTimeLabel, java.awt.BorderLayout.CENTER);
 
-        nextBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/gpl/components/JCalendarWidget/resources/navigate_right.png"))); // NOI18N
+        nextBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/gpl/SwingComponents/JCalendarWidget/resources/navigate-right16.png"))); // NOI18N
         nextBtn.setAlignmentX(0.5F);
         nextBtn.setBorderPainted(false);
         nextBtn.setContentAreaFilled(false);

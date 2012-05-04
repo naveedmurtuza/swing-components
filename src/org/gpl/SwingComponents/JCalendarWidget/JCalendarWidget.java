@@ -63,6 +63,7 @@ public class JCalendarWidget extends ImagePanel implements PropertyChangeListene
      */
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
+        if(propertyChangeSupport != null)
         propertyChangeSupport.addPropertyChangeListener(listener);
     }
 

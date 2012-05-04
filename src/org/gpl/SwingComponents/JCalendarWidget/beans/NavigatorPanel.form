@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
@@ -22,7 +22,7 @@
     <Component class="javax.swing.JButton" name="previousBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/org/gpl/components/JCalendarWidget/resources/navigate_left.png"/>
+          <Image iconType="3" name="/org/gpl/SwingComponents/JCalendarWidget/resources/navigate-left16.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -72,7 +72,7 @@
     <Component class="javax.swing.JButton" name="nextBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/org/gpl/components/JCalendarWidget/resources/navigate_right.png"/>
+          <Image iconType="3" name="/org/gpl/SwingComponents/JCalendarWidget/resources/navigate-right16.png"/>
         </Property>
         <Property name="alignmentX" type="float" value="0.5"/>
         <Property name="borderPainted" type="boolean" value="false"/>
